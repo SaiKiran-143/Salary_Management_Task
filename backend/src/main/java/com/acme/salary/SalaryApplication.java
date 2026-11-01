@@ -16,7 +16,7 @@ public class SalaryApplication {
   String[] first={"Aarav","Maya","Noah","Sofia","Liam","Anaya","Oliver","Isha","Ethan","Zara"};
   String[] last={"Sharma","Patel","Smith","Brown","Garcia","Wilson","Kumar","Taylor","Martin","Lee"};
   db.batchUpdate("INSERT INTO employee(employee_number,first_name,last_name,email,country,department,job_title,employment_status) VALUES(?,?,?,?,?,?,?,?)",
-   java.util.stream.IntStream.rangeClosed(1,10000).mapToObj(i->new Object[]{String.format("AC%05d",i),first[(i-1)%10],last[(i*7)%10],"employee"+i+"@acme.example",countries[(i-1)%6],depts[(i-1)%6],titles[(i-1)%6],i%23==0?"INACTIVE":"ACTIVE"}).toList());
+   java.util.stream.IntStream.rangeClosed(1,10000).mapToObj(i->new Object[]{String.format("AC%05d",i),first[(i-1)%10],last[(i*7)%10],"employee"+i+"@acme.example",countries.get((i-1)%6),depts.get((i-1)%6),titles.get((i-1)%6),i%23==0?"INACTIVE":"ACTIVE"}).toList());
   db.batchUpdate("INSERT INTO salary_record(employee_id,amount,currency,bonus,effective_date,reason) VALUES(?,?,?,?,?,?)",
    java.util.stream.IntStream.rangeClosed(1,10000).mapToObj(i->new Object[]{i,35000+(i%20)*2500,currency(i),(i%10)*500,"2026-01-01","Initial seeded salary"}).toList());
  };}
