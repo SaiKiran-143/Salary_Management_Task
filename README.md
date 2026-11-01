@@ -1,4 +1,7 @@
 # ACME Salary Management
+A web application that lets an HR Manager manage employee salary records and understand
+compensation across ACME's workforce of 10,000 employees in six countries.
+
 Java 17 + Spring Boot 3.3 + Spring JDBC + SQLite backend; React 18 + Vite frontend.
 
 ## Run
@@ -21,10 +24,6 @@ Before production: add SSO/RBAC, TLS, encryption, immutable audit events, backup
 5. `feat: add React HR dashboard`
 6. `test: cover salary validation`
 
-# ACME Salary Management
-
-A web application that lets an HR Manager manage employee salary records and understand
-compensation across ACME's workforce of 10,000 employees in six countries.
 
 ## Features
 
